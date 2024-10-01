@@ -13,30 +13,14 @@ class TaskManager {
         tasks.add(new Task(title, description));
     }
 
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
     // Marquer une tâche comme terminée
     public void markTaskAsComplete(int index) {
         if (index >= 0 && index < tasks.size()) {
             tasks.get(index).setCompleted(true);
-        }
-    }
-
-    // Générer un rapport des tâches terminées
-    public void printCompletedTasks() {
-        System.out.println("Taches terminees :");
-        for (Task task : tasks) {
-            if (task.isCompleted()) {
-                System.out.println(task);
-            }
-        }
-    }
-
-    // Générer un rapport des tâches non terminées
-    public void printPendingTasks() {
-        System.out.println("Taches non terminees :");
-        for (Task task : tasks) {
-            if (!task.isCompleted()) {
-                System.out.println(task);
-            }
         }
     }
 }
